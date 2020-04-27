@@ -1,6 +1,7 @@
-const router = require('express').Router()
-const passport = require('passport')
+const router = require('express').Router();
+const passport = require('passport');
 
+// Import controllers
 const {
   signupGet,
   signupPost,
@@ -10,34 +11,28 @@ const {
   logout,
   loginFacebook,
   loginFacebookCb,
-} = require('../controllers/auth.controller')
+  loginGoogle,
+  loginGoogleCb,
+} = require('../controllers/auth.controller');
 
-const { isLoggedIn, isNotLoggedIn } = require('../middlewares/auth.middleware')
+const { isLoggedIn, isNotLoggedIn } = require('../middlewares/');
 
-router.get('/signup', isNotLoggedIn, signupGet)
-router.post('/signup', signupPost)
+router.get('/signup', isNotLoggedIn, signupGet);
+router.post('/signup', signupPost);
 
-router.get('/login', isNotLoggedIn, loginGet)
-router.post('/login', loginPost)
+router.get('/login', isNotLoggedIn, loginGet);
+router.post('/login', loginPost);
 
-router.get('/auth/facebook', loginFacebook)
-router.get('/auth/facebook/callback', loginFacebookCb)
+router.get('/auth/facebook', loginFacebook);
+router.get('/auth/facebook/callback', loginFacebookCb);
 
-router.get('/profile', isLoggedIn, profileGet)
+router.get('/logout', logout);
 
-router.get('/logout', logout)
+//
+router.get('/auth/google', loginGoogle);
 
-router.get("/auth/google", passport.authenticate("google", {scope: [
-  "https://www.googleapis.com/auth/userinfo.profile",
-  "https://www.googleapis.com/auth/userinfo.email"
-  ]
-  })
-  );
+router.get('/auth/google/callback', loginGoogleCb);
 
-  router.get("/auth/google/callback",passport.authenticate("google", {
-  successRedirect: "/profile",
-  failureRedirect: "/login"
-  })
-  );
+router.get('/profile', isLoggedIn, profileGet);
 
-module.exports = router
+module.exports = router;

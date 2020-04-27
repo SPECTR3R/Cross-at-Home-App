@@ -47,10 +47,16 @@ exports.logout = (req, res) => {
   res.redirect('/login');
 };
 
-// exports.loginGoogle = passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] });
+exports.loginGoogle=
+passport.authenticate('google', {
+  scope: [
+    'https://www.googleapis.com/auth/userinfo.profile',
+    'https://www.googleapis.com/auth/userinfo.email',
+  ],
+})
 
-// exports.loginGoogleCb = passport.authenticate('google', {
-//   failureRedirect: '/login' }),
-//   function(req, res) {
-//     res.redirect('/place');
-// }
+exports.loginGoogleCb=
+passport.authenticate('google', {
+  successRedirect: '/profile',
+  failureRedirect: '/login',
+})
