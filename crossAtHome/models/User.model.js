@@ -3,7 +3,7 @@ const PLM = require('passport-local-mongoose');
 
 const userSchema = new Schema(
   {
-    userName: { type: String },
+    name: { type: String },
     email: { type: String },
     password: { type: String },
     facebookId: { type: String },
@@ -12,6 +12,6 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-userSchema.plugin(PLM, { usernameField: 'userName' });
+userSchema.plugin(PLM, { usernameField: 'email' });
 
 module.exports = model('User', userSchema);

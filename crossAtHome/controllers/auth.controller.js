@@ -7,7 +7,7 @@ exports.signupGet = (req, res) => {
 
 exports.signupPost = (req, res) => {
   const { name, email, password, verify } = req.body;
-  const error = 'The passwords doesnt match';
+  let error = 'The passwords doesnt match';
 
   if (password !== verify) {
     return res.render('auth/signup', error);
@@ -15,7 +15,7 @@ exports.signupPost = (req, res) => {
     User.register({ name, email }, password)
       .then(() => res.redirect('/login'))
       .catch(err => {
-       error = err.message;
+        error = err.message;
         return res.render('auth/signup', error);
       });
   }
