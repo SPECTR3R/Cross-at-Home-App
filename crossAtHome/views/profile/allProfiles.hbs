@@ -1,0 +1,16 @@
+<h1>Profiles List</h1>
+
+{{#each profiles}}
+<div>
+<h3>{{name}}</h3>
+<img src="{{imagePath}}" alt="{{imageName}}" style="width: 75px; height: 75px">
+<h5>Edad {{age}}</h5>
+<a href="/profile/{{_id}}"><button>Ver Perfil</button></a>
+</div>
+{{/each}}
+
+<a href="/profile">
+  <button>
+    Vuelve a tu Perfil
+  </button>
+</a>

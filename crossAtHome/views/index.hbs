@@ -1,6 +1,29 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Cross At Home</h1>
+<p>Cross At Home es la web en donde podras encontrar ejercicios para realizar en casa
+  llevar registro de tu progreso, y poder compartir desafios con tus amigos.</p>
 
-<a href="/signup">Sign Up</a>
 
-<a href="/login">Log In</a>
+
+
+
+<h2 style="color: red;">{{message}}</h2>
+
+
+
+<form action="/login" method="POST">
+  <input type="email" name="email" placeholder="Correo Electrónico">
+  <input type="password" name="password" placeholder="Contraseña">
+  <input type="submit" value="Log In">
+</form>
+
+
+<form action="/signup" method="POST">
+  <input type="text" name="name" placeholder="Nombre">
+  <input type="email" name="email" placeholder="Correo Electrónico">
+  <input type="password" name="password" placeholder="Contraseña">
+  <input type="password" name="verify" placeholder="Verificar Contraseña">
+  <input type="submit" value="Sign Up">
+</form>
+
+<button><a href="/auth/facebook">Log in with Facebook</a></button>
+<button><a href="/auth/google">Login With Google</a></button>

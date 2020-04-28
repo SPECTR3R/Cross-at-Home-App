@@ -49,12 +49,6 @@ passport.use(
             return;
           }
 
-          // const userCreated = await User.create({
-          //   name: `${profile.name.givenName} ${profile.name.familyName}`,
-          //   facebookId: profile.id,
-          //   email: profile.emails[0].value,
-          //   photoURL: profile.photos[0].value,
-          // });
           User.create({
             name: profile.displayName,
             googleId: profile.id,

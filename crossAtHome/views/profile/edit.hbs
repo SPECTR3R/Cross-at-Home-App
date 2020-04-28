@@ -1,0 +1,13 @@
+<h2>Edit Profile</h2>
+<form action="/profile/edit" method="POST" enctype="multipart/form-data">
+  <input name="name" type="text" placeholder="Nombre" value="{{name}}"><br>
+  <input name="email" type="text" placeholder="Correo Electronico" value="{{email}}"><br>
+  <input name="age" type="number" placeholder="Edad" value="{{age}}"><label for="Age">Años</label><br>
+  <input name="weight" type="number" placeholder="Peso" value="{{weight}}"><label for="Kilograms">Kilos</label><br>
+  <input name="height" type="number" placeholder="Estatura" value="{{height}}"><label
+    for="Meters">Centimetros</label><br>
+  <input name="profilePic" type="file" placeholder="Profile Picture"><br>
+  <input type="submit" value="Edit Profile">
+</form>
+
+<h4><a href="/profile">Volver a mi Perfil</a></h4>
