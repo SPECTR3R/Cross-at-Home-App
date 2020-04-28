@@ -78,5 +78,7 @@ const authRoutes = require('./routes/auth.routes');
 app.use('/', authRoutes);
 const profileRoutes = require('./routes/profile.routes');
 app.use('/', profileRoutes);
+const wodRoutes = require('./routes/wod.routes');
+app.use('/', wodRoutes);
 
 module.exports = app;

@@ -6,7 +6,7 @@ const wodPostSchema = new Schema({
   duration: { type: String },
   desc: { type: String },
   level: { type: String, enum: ['Principiante', 'Escalado', 'RX'] },
-  record: { type: String, max: 200 }
+  record: { type: String, max: 200 },
   userId: { type: Schema.Types.ObjectId, ref: 'User.model' },
   comments: [ { type: Schema.Types.ObjectId, ref: 'WodComment.model' } ]
 });
