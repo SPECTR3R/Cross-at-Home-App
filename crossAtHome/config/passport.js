@@ -40,26 +40,20 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: 'http://localhost:3000/auth/google/callback',
     },
-    (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       console.log('Google account details:', profile);
-      User.findOne({ googleID: profile.id })
-        .then(user => {
-          if (user) {
-            done(null, user);
-            return;
-          }
-
-          User.create({
-            name: profile.displayName,
-            googleId: profile.id,
-            email: profile.emails[0].value
-           })
-            .then(newUser => {
-              done(null, newUser);
-            })
-            .catch(err => done(err));
-        })
-        .catch(err => done(err));
+      const user = await User.findOne({ googleId: profile.id });
+      console.log(user);
+      if (user) {
+        done(null, user);
+        return;
+      }
+      const newUser = await User.create({
+        name: profile.displayName,
+        googleId: profile.id,
+        email: profile.emails[0].value,
+      });
+      done(null, newUser);
     }
   )
 );

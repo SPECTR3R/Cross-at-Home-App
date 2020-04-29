@@ -1,11 +1,27 @@
 <div>
   <strong>Name: {{wodName}}</strong>
   <br>
-  <p>{{wodFocus}}</p>
-  <p>{{duration}}</p>
-  <p>{{desc}}</p>
-  <p>{{level}}</p>
-   <div>
-    <button type="submit">Elegir</button>
+  <h4>{{wodFocus}}</h4>
+  <h4>{{duration}}</h4>
+  <h4>{{desc}}</h4>
+  <h4>{{level}}</h4>
+  <h4>{{record}}</h4>
+  {{#each comments}}
+  <h4>{{comments.body}}</h4><br>
+  {{/each}}
+  <form action="/createComment" method="POST">
+    <div>
+      <textarea name="body" rows="3"></textarea>
+    </div>
+    <button type="submit">Comentar</button>
+  </form>
+  <div>
+    <a href="/createWod" method="POST">Realizar WOD</a>
   </div>
 </div>
+
+<a href="/profile">
+  <button>
+    Vuelve a tu Perfil
+  </button>
+</a>

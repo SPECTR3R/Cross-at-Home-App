@@ -2,10 +2,18 @@
  <div>
   {{#each wod}}
   <div>
-   <p>{{this.wodFocus}}</p>
-   <p>{{this.level}}</p>
-   <a href="/wod/{{_id}}">Ir al wod</a>
+  <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 110px; height: 110px">
+  <h3>{{userId.name}}</h3>
+  <p>{{wodFocus}}</p>
+  <p>{{level}}</p>
+  <a href="/wod/{{_id}}">Ir al wod</a>
   </div>
   {{/each}}
  </div>
 </div>
+
+<a href="/profile">
+  <button>
+    Vuelve a tu Perfil
+  </button>
+</a>

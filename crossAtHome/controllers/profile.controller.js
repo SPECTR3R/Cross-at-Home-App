@@ -13,11 +13,7 @@ exports.profileEditGet = async (req, res) => {
 exports.profileEditPost = async (req, res) => {
   const { user } = req;
   const { url: imagePath, originalname: imageName } = req.file ? req.file : {url:user.imagePath, originalname: user.imageName};
-  const perfil = await User.findByIdAndUpdate(
-    user._id,
-    { $set: { ...req.body, imageName, imagePath } },
-    { new: true }
-  );
+  const perfil = await User.findByIdAndUpdate(user._id,{ $set: { ...req.body, imageName, imagePath } },{ new: true });
   res.redirect('/profile');
 };
 

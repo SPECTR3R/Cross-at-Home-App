@@ -1,5 +1,6 @@
+require('dotenv').config();
+
 const mongoose = require('mongoose');
-const DataBase = 'mongodb://localhost/crossathome';
 const WodAPI = require('../models/WodAPI.model');
 
 const wodData = [
@@ -499,7 +500,7 @@ const wodData = [
 ];
 
 const connectDB = async () => {
-  await mongoose.connect(DataBase, {
+  await mongoose.connect(process.env.MONGO_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,

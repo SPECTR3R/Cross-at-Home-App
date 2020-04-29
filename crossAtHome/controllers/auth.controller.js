@@ -26,6 +26,7 @@ exports.signupPost = (req, res) => {
 exports.loginPost = passport.authenticate('local', {
   successRedirect: '/profile',
   failureRedirect: ('/'),
+  failureFlash: true ,
 });
 
 exports.loginFacebook = passport.authenticate('facebook', { scope: ['email'] });

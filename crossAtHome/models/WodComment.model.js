@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const wodCommentSchema = new Schema({
-  {
     userId: {
       type: Schema.Types.ObjectId,
       ref: 'User',
@@ -12,6 +11,6 @@ const wodCommentSchema = new Schema({
     versionKey: false,
     timestamps: true,
   }
-});
+);
 
 module.exports = model('WodComment', wodCommentSchema);

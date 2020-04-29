@@ -13,7 +13,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 mongoose
-  .connect('mongodb://localhost/crossathome', {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
