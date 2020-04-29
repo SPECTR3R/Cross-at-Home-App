@@ -1,0 +1,40 @@
+<div>
+  <strong>Hola {{name}}</strong>
+  <br>
+
+  <img
+    src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjkxNTQ0MC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYxMzEzMzQyMn0.Gz-oOBipcmLH2HQlygSwRjL74fk5lHIlrYneAZZV1us/img.jpg?width=2000&height=2000"
+    alt="" style="width:400px;height:auto;"> <br>
+  <p>Eshora de iniciar tu entrenamiento en casa, en la siguiente forma <br> puedes escoger tu nivel de condicion fiśica
+    y nuestro sistema insteligente <br> escogera una rutina adecuada para tu nivel!</p>
+
+  <form action="/createWod" method="POST">
+    <input list="athletelevel">
+
+    <datalist id="athletelevel">
+      <p>Atleta, Selecciona tu nivel aquí:</p>
+
+<div>
+  <input type="radio" id="Principiante" name="athletelevel" value="Principiante"
+         checked>
+  <label for="huey">Principiante</label>
+</div>
+
+<div>
+  <input type="radio" id="Escalado" name="athletelevel" value="Escalado">
+  <label for="dewey">Escalado</label>
+</div>
+
+<div>
+  <input type="radio" id="RX" name="athletelevel" value="RX">
+  <label for="louie">RX</label>
+</div>
+
+    </datalist> <input type="submit" value="Log In">
+  </form>
+
+  </form>
+
+</div>
+
+<a href="/auth/google">login</a>
