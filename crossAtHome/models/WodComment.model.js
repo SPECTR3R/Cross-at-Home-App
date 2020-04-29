@@ -4,7 +4,7 @@ const wodCommentSchema = new Schema({
   {
     userId: {
       type: Schema.Types.ObjectId,
-      ref: 'User.model',
+      ref: 'User',
     },
     body: {type: String, max: 150}
   },

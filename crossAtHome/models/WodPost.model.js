@@ -7,8 +7,8 @@ const wodPostSchema = new Schema({
   desc: { type: String },
   level: { type: String, enum: ['Principiante', 'Escalado', 'RX'] },
   record: { type: String, max: 200 },
-  userId: { type: Schema.Types.ObjectId, ref: 'User.model' },
-  comments: [ { type: Schema.Types.ObjectId, ref: 'WodComment.model' } ]
+  userId: { type: Schema.Types.ObjectId, ref: 'User' },
+  comments: [ { type: Schema.Types.ObjectId, ref: 'WodComment' } ]
 });
 
 module.exports = model('WodPost', wodPostSchema);

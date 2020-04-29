@@ -1,13 +1,34 @@
-<h2>Crear Post</h2>
+<div>
+    <strong>Hola
+        {{name}}</strong>
+    <br>
 
-<form action="/wod/create" method="POST">
-  <input name="wodName" type="text" placeholder="Wod Name"><br>
-  <input name="wodFocus" type="text" placeholder="WodFocus"><br>
-  <input name="duration" type="text" placeholder="Duracion"><br>
-  <input name="desc" type="text" placeholder="Descripcion"><br>
-  <input name="level" type="select"><br>
-  <input name="record" type="text"><br>
-  <input type="submit" value="Crear Post">
-</form>
+    <img src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjkxNTQ0MC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYxMzEzMzQyMn0.Gz-oOBipcmLH2HQlygSwRjL74fk5lHIlrYneAZZV1us/img.jpg?width=2000&height=2000" alt="" style="width:400px;height:auto;">
+    <br>
+    <p>Eshora de iniciar tu entrenamiento en casa, en la siguiente forma
+        <br>
+        puedes escoger tu nivel de condicion fiśica
+            y nuestro sistema insteligente
+        <br>
+        escogera una rutina adecuada para tu nivel!</p>
 
-<h4><a href="/profile">Volver a mi Perfil</a></h4>
+    <p>Atleta, Selecciona tu nivel aquí:</p>
+    <form action="/createWod" method="POST">
+            <div>
+                <input type="radio" id="Principiante" name="level" value="Principiante" checked>
+                <label for="huey">Principiante</label>
+            </div>
+            <div>
+                <input type="radio" id="Escalado" name="level" value="Escalado">
+                <label for="dewey">Escalado</label>
+            </div>
+            <div>
+                <input type="radio" id="RX" name="level" value="RX">
+                <label for="louie">RX</label>
+            </div>
+
+        </datalist>
+        <input type="submit" value="Rock on!">
+    </form>
+
+</form></div><a href="/auth/google">login</a>

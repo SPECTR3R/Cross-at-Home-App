@@ -4,14 +4,21 @@ const router = express.Router();
 const {
   listView,
   detailView,
-  crearPost,
-  createPostProcess,
+  yourWodsView,
+  createWodView,
+  createWodProcess,
+  doWodProcess,
 } = require('../controllers/wod.controller');
 
 router.get('/wods', listView);
 router.get('/wod/:id', detailView);
 
-router.get('/create', crearPost);
-router.post('/create', createPostProcess);
+router.get('/createWod', createWodView);
+router.post('/createWod', createWodProcess);
+
+//router.post('/doWodView', doWodView); to do
+router.post('/doWodView', doWodProcess);
+
+router.get('/yourWods', yourWodsView);
 
 module.exports = router;
