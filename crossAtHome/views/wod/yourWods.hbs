@@ -1,0 +1,24 @@
+<h1>Your WOD's</h1>
+
+{{#each wods}}
+<div>
+  <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
+  <h4>{{wodFocus}}</h4>
+  <h4>{{duration}}</h4>
+  <h4>{{desc}}</h4>
+  <h4>{{level}}</h4>
+  <h4>{{record}}</h4>
+  {{#each comments}}
+  <h4>{{comments.body}}</h4><br>
+  {{/each}}
+</div>
+<br>
+<br>
+<hr>
+{{/each}}
+
+<a href="/profile">
+  <button>
+    Vuelve a tu Perfil
+  </button>
+</a>

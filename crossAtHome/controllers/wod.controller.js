@@ -1,5 +1,15 @@
-const WodAPI = require('../models/WodAPI.model');
 const WodPost = require('../models/WodPost.model');
+const WodAPI = require('../models/WodAPI.model');
+
+exports.listView = async (req, res) => {
+  const wod = await WodPost.find();
+  res.render('wod/allwod', { wod });
+};
+
+exports.detailView = async (req, res) => {
+  const wod = await WodPost.findById(req.params.id);
+  res.render('wod/detailWod', wod);
+};
 
 exports.createWodView = (req, res) => {
   user = req.user;
@@ -17,5 +27,12 @@ exports.createWodProcess = async (req, res) => {
 exports.doWodProcess = async (req, res) => {
   console.log(req.body);
   const post = await WodPost.create(req.body);
-  res.redirect('/profile')
+  res.redirect('/profile');
+};
+
+exports.yourWodsView = async (req, res) => {
+  console.log(req.user.id);
+  const wods = await WodPost.find({ userId: req.user.id });
+  console.log(wods);
+  res.render('wod/yourWods', { wods });
 };
