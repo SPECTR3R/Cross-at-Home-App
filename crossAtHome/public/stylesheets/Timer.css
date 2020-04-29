@@ -1,141 +1,144 @@
- /* Timer setup styles */
+/* Timer setup styles */
 #cStateContainer {
- height: 500px;
- width: 320px;
- background-image: url("../images/ChronometerBG.png");
- border: 5px solid rgb(134, 135, 136);
- border-radius: 15px;
- display: flex;
- flex-direction: column-reverse;
-}
-.cSign {
- color: aliceblue;
- text-align: left;
- margin: 15px;
- display: block;
- align-self: flex-start;
- font-family: Arial, Helvetica, sans-serif;
- font-weight: 600;
- font-size: 15px;
-}
-.cContainer {
- display: flex;
- flex-direction: column;
- flex-wrap: nowrap;
- justify-content: flex-end;
- align-items: center;
- font-family: Arial, Helvetica, sans-serif;
-}
-.cButton {
- border-radius: 5px;
- border: none;
- color: rgb(255, 255, 255);
- text-align: center;
- font-size: 16px;
- font-weight: 800;
- width: 200px;
- padding: 10px 0;
- margin: 15px 2px;
-}
-.cText div {
- color: azure;
- font-size: 25px;
- text-align: center;
-}
-.cText :first-child {
- color: azure;
- font-size: 50px;
- text-align: center;
- font-weight: 800;
- margin-bottom: 20px;
-}
-.cInputContainer {
- color: azure;
- font-size: 25px;
-}
-.cInputContainer input {
- background: transparent;
- border-radius: 5px;
- width: 80px;
- height: 80px;
- margin: 30px 5px;
- color: azure;
- text-align: center;
- font-size: 60px;
- padding-left: 8px;
-}
-.cTabataContainer {
- color: azure;
- font-size: 20px;
- font-weight: 800;
-}
-.cTabataContainer input {
- background: transparent;
- border: 2px solid rgb(31, 190, 26);
- border-radius: 5px;
- width: 60px;
- height: 60px;
- margin: 10px 5px;
- color: azure;
- text-align: center;
- font-size: 40px;
- padding-left: 8px;
-}
-.backButton {
- background-color: rgb(228, 76, 76);
+  height: 500px;
+  width: 320px;
+  background-image: url("../images/ChronometerBG.png");
+  border: 5px solid rgb(134, 135, 136);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+ }
+ .cSign {
+  color: aliceblue;
+  text-align: left;
+  margin: 15px;
+  display: block;
+  align-self: flex-start;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+ }
+ .cContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+ .cButton {
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  align-self: center;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+  width: 200px;
+  padding: 10px 0;
+  margin: 15px 2px;
+ }
+ .cText div {
+  color: azure;
+  font-size: 25px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 
- border-radius: 5px;
- border: none;
- color: rgb(255, 255, 255);
- text-align: center;
- font-size: 16px;
- font-weight: 800;
- width: 90px;
- padding: 10px 0;
- margin-left: 18px;
-}
+ }
+ .cText :first-child {
+  color: azure;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 20px;
+ }
+ .cInputContainer {
+  color: azure;
+  font-size: 25px;
+ }
+ .cInputContainer input {
+  background: transparent;
+  border-radius: 5px;
+  width: 80px;
+  height: 80px;
+  margin: 30px 5px;
+  color: azure;
+  text-align: center;
+  font-size: 60px;
+  padding-left: 8px;
+ }
+ .cTabataContainer {
+  color: azure;
+  font-size: 20px;
+  font-weight: 800;
+ }
+ .cTabataContainer input {
+  background: transparent;
+  border: 2px solid rgb(31, 190, 26);
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  margin: 10px 5px;
+  color: azure;
+  text-align: center;
+  font-size: 40px;
+  padding-left: 8px;
+ }
+ .backButton {
+  background-color: rgb(228, 76, 76);
 
- /* Timer animation styles */
-.base-timer {
- position: relative;
- width: 150px;
- height: 150px;
-}
-.base-timer__svg {
- transform: scaleX(-1);
-}
-.base-timer__circle {
- fill: none;
- stroke: none;
-}
-.base-timer__path-elapsed {
- stroke-width: 7px;
- stroke: grey;
-}
-.base-timer__path-remaining {
- stroke-width: 7px;
- stroke-linecap: round;
- transform: rotate(90deg);
- transform-origin: center;
- transition: 1s linear all;
- fill-rule: nonzero;
- stroke: currentColor;
-}
-.base-timer__path-remaining.green {
- color: rgb(65, 184, 131);
-}
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+  width: 90px;
+  padding: 10px 0;
+  margin-left: 18px;
+ }
 
-.base-timer__path-remaining.orange {
- color: orange;
-}
-.base-timer__path-remaining.red {
- color: red;
-}
-.base-timer__label {
- position: absolute;
- top: 0;
- display: flex;
- align-items: center;
- justify-content: center;
- font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+  /* Timer animation styles */
+ .base-timer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+ }
+ .base-timer__svg {
+  transform: scaleX(-1);
+ }
+ .base-timer__circle {
+  fill: none;
+  stroke: none;
+ }
+ .base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+ }
+ .base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+ }
+ .base-timer__path-remaining.green {
+  color: rgb(38, 177, 10);
+ }
+
+ .base-timer__path-remaining.orange {
+  color: orange;
+ }
+ .base-timer__path-remaining.red {
+  color: red;
+ }
+ .base-timer__label {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+ }

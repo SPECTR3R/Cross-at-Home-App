@@ -9,20 +9,22 @@ const {
   createWodProcess,
   doWodView,
   doWodProcess,
-  createComment
+  createComment,
 } = require('../controllers/wod.controller');
 
-router.get('/wods', listView);
-router.get('/wod/:id', detailView);
+const { isLoggedIn } = require('../middlewares');
 
-router.get('/createWod', createWodView);
-router.post('/createWod', createWodProcess);
+router.get('/wods', isLoggedIn, listView);
+router.get('/wod/:id', isLoggedIn, detailView);
 
-router.get('/doWodView', doWodView);
-router.post('/doWodView', doWodProcess);
+router.get('/createWod', isLoggedIn, createWodView);
+router.post('/createWod', isLoggedIn, createWodProcess);
 
-router.get('/yourWods', yourWodsView);
+router.get('/doWodView/:id', isLoggedIn, doWodView);
+router.post('/doWodView', isLoggedIn, doWodProcess);
 
-router.post('/createComment', createComment);
+router.get('/yourWods', isLoggedIn, yourWodsView);
+
+router.post('/createComment/:id', isLoggedIn, createComment);
 
 module.exports = router;

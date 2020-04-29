@@ -1,12 +1,12 @@
 class Timer {
-  constructor(timerContainer, timerSize = 150, labelcolor = 'black') {
+  constructor(timerContainer, timeLimit = 60, timerSize = 150, labelcolor = 'green') {
     this.COLOR_CODES = {
       info: { color: 'green' },
       warning: { color: 'orange', threshold: 10 },
       alert: { color: 'red', threshold: 5 },
     };
-    this.TIME_LIMIT = 60;
-    this.timeLeft = this.TIME_LIMIT;
+    this.timeLimit = timeLimit;
+    this.timeLeft = this.timeLimit;
     this.timePassed = 0;
     this.timerInterval = null;
     this.remainingPathColor = this.COLOR_CODES.info.color;
@@ -38,37 +38,28 @@ class Timer {
     </div>`;
   }
 
-  onTimesUp() {
-    clearInterval(this.timerInterval);
-  }
-
   stopTimer() {
     clearInterval(this.timerInterval);
   }
 
-  restartTimer() {
+  restartTimer(timeLimit = this.timeLimit) {
     this.stopTimer();
-    this.setTimeLimit(this.TIME_LIMIT);
-    this.renderTimer(this.TIME_LIMIT);
-    this.startTimer();
-  }
-
-  setTimeLimit(t) {
-    this.TIME_LIMIT = t;
-    this.timeLeft = this.TIME_LIMIT;
+    this.timeLeft = timeLimit;
     this.timePassed = 0;
     this.timerInterval = null;
     this.remainingPathColor = this.COLOR_CODES.info.color;
+    this.renderTimer();
+    this.startTimer();
   }
 
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timePassed = this.timePassed += 1;
-      this.timeLeft = this.TIME_LIMIT - this.timePassed;
+      this.timeLeft = this.timeLimit - this.timePassed;
       document.getElementById('base-timer-label').innerHTML = this.formatTime(this.timeLeft);
       this.setCircleDasharray();
       this.setRemainingPathColor(this.timeLeft);
-      if (this.timeLeft === 0) this.onTimesUp();
+      if (this.timeLeft === 0) this.stopTimer();
     }, 1000);
   }
 
@@ -80,8 +71,8 @@ class Timer {
   }
 
   calculateTimeFraction() {
-    const rawTimeFraction = this.timeLeft / this.TIME_LIMIT;
-    return rawTimeFraction - (1 / this.TIME_LIMIT) * (1 - rawTimeFraction);
+    const rawTimeFraction = this.timeLeft / this.timeLimit;
+    return rawTimeFraction - (1 / this.timeLimit) * (1 - rawTimeFraction);
   }
 
   setCircleDasharray() {
@@ -103,9 +94,10 @@ class Timer {
   }
 }
 
+let timer = null;
 let renderState = flag => {
   const $cStateContainer = document.getElementById('cStateContainer');
-  const timer = new Timer(undefined, 200, 'white');
+
   switch (flag) {
     //For Time /////////////////////////////////////////////
     case 'forTime':
@@ -132,11 +124,12 @@ let renderState = flag => {
       <div class="cSign">
         2020 SPECTR3R-B <button onclick="renderState('timer')" class="backButton" >Go back</button>
       </div>
-      <div class="cContainer"></div>`;
-      timer.timerContainer = document.querySelector('.cContainer');
-      timer.restartTimer();
-
-      timer.setTimeLimit(timelimit * 60);
+      <button onclick="timer.restartTimer()" class="cButton" style=" margin: 50px 0px;background-color: rgb(95, 212, 248);">Start Timer</button>
+      <div class="cContainer"></div>
+      <div class="cText">
+       <div>FOR TIME</div>
+      </div>`;
+      timer = new Timer(document.querySelector('.cContainer'), timelimit*60, 150, 'white');
       timer.renderTimer();
       timer.startTimer();
 
@@ -207,8 +200,11 @@ let renderState = flag => {
       break;
     // Main View //////////////////////////////////////////
     default:
-      if (timer.timerInterval) timer.stopTimer();
       console.log('stop');
+      if (timer) {
+        timer.stopTimer();
+        timer = null;
+      }
       $cStateContainer.innerHTML = `
       <div class="cSign" style="margin-bottom: 26px;">2020 SPECTR3R-B</div>
       <div class="cContainer">

@@ -6,22 +6,22 @@
   <h4>{{desc}}</h4>
   <h4>{{level}}</h4>
   <h4>{{record}}</h4>
+  <hr>
   {{#each comments}}
-  <h4>{{comments.body}}</h4><br>
+  <p>{{this.body}}</p>
+  <br>
+  <hr>
   {{/each}}
-  <form action="/createComment" method="POST">
+  <form action="/createComment/{{_id}}" method="POST">
     <div>
       <textarea name="body" rows="3"></textarea>
     </div>
     <button type="submit">Comentar</button>
   </form>
   <div>
-    <a href="/createWod" method="POST">Realizar WOD</a>
+    <a href="/doWodView/{{_id}}" method="POST">Realizar WOD</a>
   </div>
 </div>
 
-<a href="/profile">
-  <button>
-    Vuelve a tu Perfil
-  </button>
-</a>
+<h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
+<br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
