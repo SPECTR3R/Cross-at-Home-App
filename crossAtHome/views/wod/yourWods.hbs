@@ -9,11 +9,16 @@
   <h4>{{level}}</h4>
   <h4>{{record}}</h4>
   {{#each comments}}
-  <h4>{{comments.body}}</h4><br>
+  <hr>
+  <h5>{{this.userId.name}}</h5>
+  <p>{{this.body}}</p>
   {{/each}}
 </div>
+<hr>
 <br>
-<br>
+  <form action="/deleteWod/{{_id}}" method="POST">
+  <button type="submit">Borrar WOD</button>
+  </form>
 <hr>
 {{/each}}
 

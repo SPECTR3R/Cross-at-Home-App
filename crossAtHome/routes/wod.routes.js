@@ -11,6 +11,11 @@ const {
   doWodProcess,
   createComment,
   deleteComment,
+  deleteWodPost,
+  editCommentView,
+  editCommentProcess,
+  editWodView,
+  editWodProcess,
 } = require('../controllers/wod.controller');
 
 const { isLoggedIn } = require('../middlewares');
@@ -28,10 +33,18 @@ router.post('/doWodView', isLoggedIn, doWodProcess);
 
 router.get('/yourWods', isLoggedIn, yourWodsView);
 
+router.get('/editWodPost/:id', isLoggedIn, editWodView);
+router.post('/editWodPost/:id', isLoggedIn, editWodProcess);
+
+router.post('/deleteWod/:id', isLoggedIn, deleteWodPost)
+
 // Comments Routes
 
 router.post('/createComment/:id', isLoggedIn, createComment);
 
-router.post('/deleteComment/:id', isLoggedIn, deleteComment)
+router.post('/deleteComment/:id', isLoggedIn, deleteComment);
+
+router.get('/editComment/:id', isLoggedIn, editCommentView);
+router.post('/editComment/:id', isLoggedIn, editCommentProcess);
 
 module.exports = router;

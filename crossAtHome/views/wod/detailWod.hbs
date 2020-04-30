@@ -6,11 +6,13 @@
   <h4>{{desc}}</h4>
   <h4>{{level}}</h4>
   <h4>{{record}}</h4>
+  <a href='/editWodPost/{{this._id}}' method="POST">Editar tu WOD</a>
   <hr>
   {{#each comments}}
   <form action="/deleteComment/{{_id}}" method="POST">
   <h5>{{this.userId.name}}</h5>
   <p>{{this.body}}</p>
+  <a href='/editComment/{{this._id}}' method="POST">Editar Comentario</a>
   <button type="submit">Borrar Comentario</button>
   </form>
   <br>
@@ -29,3 +31,6 @@
 
 <h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
 <br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+
+
+<window class="alert"></window>

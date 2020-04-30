@@ -1,0 +1,14 @@
+<h2>Edit WOD</h2>
+<form action='/editWodPost/{{_id}}' method="POST">
+  <input name="wodName" type="text" placeholder="Enfoque de Entrenamiento" value="{{wodName}}"><br>
+  <input name="wodFocus" type="text" placeholder="Correo Electronico" value="{{wodFocus}}"><br>
+  <input name="duration" type="text" placeholder="Duración" value="{{duration}}"><br>
+  <input name="desc" type="text" placeholder="Rutina a Ejecutar" value="{{desc}}"><br>
+  <input name="level" type="text" placeholder="Nivel" value="{{level}}"><br>
+  <input name="record" type="text" placeholder="Coloca tu Record" value="{{record}}"><br>
+  <input type="submit" value="Edit WOD">
+</form>
+
+<h4><a href="/profile">Volver a mi Perfil</a></h4>
+<br>
+<h4><a href="/wods">Ver todos los WOD's</a></h4><br>
