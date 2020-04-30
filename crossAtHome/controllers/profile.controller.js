@@ -1,4 +1,5 @@
 const User = require('../models/User.model');
+const WodPost = require('../models/WodPost.model');
 
 exports.profileGet = (req, res) => {
   const { user } = req;
@@ -25,4 +26,10 @@ exports.allProfiles = async (req, res) => {
 exports.profileIdView = async (req, res) => {
   const profileID = await User.findById(req.params.id);
   res.render('profile/profileFriend', profileID);
+};
+
+exports.profileIdView = async (req, res) => {
+  const userId = req.params.id
+  const wod = await WodPost.find({userId}).populate('userId');
+  res.render('profile/profileFriend', { wod });
 };

@@ -1,6 +1,19 @@
 <h1>{{name}}</h1>
 <img src="{{imagePath}}" alt="{{imageName}}" style="width: 110px; height: 110px">
 
+{{#each wod}}
+<div>
+  <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
+  <h4>{{wodFocus}}</h4>
+  <h4>{{duration}}</h4>
+  <h4>{{desc}}</h4>
+  <h4>{{level}}</h4>
+  <h4>{{record}}</h4>
+</div>
+<br>
+<br>
+<hr>
+{{/each}}
 
 <a href="/profile/all">Vuelve a Todos los Perfiles</a>
 <h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
