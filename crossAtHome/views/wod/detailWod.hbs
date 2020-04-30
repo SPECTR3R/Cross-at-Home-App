@@ -8,7 +8,11 @@
   <h4>{{record}}</h4>
   <hr>
   {{#each comments}}
+  <form action="/deleteComment/{{_id}}" method="POST">
+  <h5>{{this.userId.name}}</h5>
   <p>{{this.body}}</p>
+  <button type="submit">Borrar Comentario</button>
+  </form>
   <br>
   <hr>
   {{/each}}

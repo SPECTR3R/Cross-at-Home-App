@@ -8,9 +8,7 @@ exports.listView = async (req, res) => {
 };
 
 exports.detailView = async (req, res) => {
-  const wod = await WodPost.findById(req.params.id).populate('comments');
-
-  console.log(wod)
+  const wod = await WodPost.findById(req.params.id).populate('comments').populate({path: 'comments', populate: {path: 'userId', model: 'User'} });
   res.render('wod/detailWod', wod);
 };
 
@@ -46,8 +44,12 @@ exports.yourWodsView = async (req, res) => {
 
 exports.createComment = async (req,res) => {
   const comment = await WodComment.create({ userId: req.user.id, body: req.body.body });
-  console.log(req.params)
-  console.log(comment._id)
   await WodPost.findByIdAndUpdate( req.params.id, { $push: { comments: comment._id } }, { new: true })
   res.redirect(`/wod/${req.params.id}`);
 };
+
+exports.deleteComment = async (req, res) => {
+  await WodComment.findByIdAndDelete(req.params.id)
+  const { _id } = await WodPost.findOneAndUpdate( { comments : req.params.id }, { $pull: { comments: req.params.id } }  )
+  res.redirect(`/wod/${_id}`)
+}
