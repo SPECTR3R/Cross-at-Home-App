@@ -12,6 +12,7 @@ const {
   profileEditPost,
   allProfiles,
   profileIdView,
+  delProfile,
 } = require('../controllers/profile.controller');
 
 // Profile Routes
@@ -24,5 +25,7 @@ router.post('/profile/edit', isLoggedIn, uploadCloud.single('profilePic'), profi
 router.get('/profile/all', allProfiles);
 
 router.get('/profile/:id', isLoggedIn, profileIdView);
+
+router.get('/profile/delete/:id', isLoggedIn, delProfile)
 
 module.exports = router;

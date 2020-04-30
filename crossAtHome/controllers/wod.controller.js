@@ -11,7 +11,12 @@ exports.detailView = async (req, res) => {
   const wod = await WodPost.findById(req.params.id)
     .populate('comments')
     .populate({ path: 'comments', populate: { path: 'userId', model: 'User' } });
-  res.render('wod/detailWod', wod);
+  wod.esElMismoUsuarioPost = false
+  if ( String(wod.userId._id) === String(req.user._id) ){
+    wod.esElMismoUsuarioPost = true
+  }
+  wod.usuarioConectado = req.user._id
+  res.render('wod/detailWod',  wod );
 };
 
 exports.createWodView = (req, res) => {

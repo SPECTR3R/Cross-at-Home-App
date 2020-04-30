@@ -33,3 +33,9 @@ exports.profileIdView = async (req, res) => {
   const wod = await WodPost.find({userId}).populate('userId');
   res.render('profile/profileFriend', { wod });
 };
+
+exports.delProfile = async (req, res) => {
+  console.log(req.user._id)
+  await User.findByIdAndDelete(req.user.id)
+  res.redirect('/')
+}

@@ -64,6 +64,13 @@ app.use(
   })
 );
 
+hbs.registerHelper('ifCond', (v1, v2, options) => {
+  if (String(v1) === String(v2)) {
+    return options.fn(this)
+  }
+  return options.inverse(this)
+})
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
