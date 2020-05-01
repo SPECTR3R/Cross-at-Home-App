@@ -9,6 +9,8 @@ const wodPostSchema = new Schema({
   record: { type: String, max: 200 },
   userId: { type: Schema.Types.ObjectId, ref: 'User' },
   comments: [ { type: Schema.Types.ObjectId, ref: 'WodComment' } ]
-});
+},
+{ timestamps: true }
+);
 
 module.exports = model('WodPost', wodPostSchema);

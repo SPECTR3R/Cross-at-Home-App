@@ -3,7 +3,7 @@ const WodAPI = require('../models/WodAPI.model');
 const WodComment = require('../models/WodComment.model');
 
 exports.listView = async (req, res) => {
-  const wod = await WodPost.find().populate('userId');
+  const wod = await WodPost.find().populate('userId').sort( { createdAt: -1 } );
   res.render('wod/allwod', { wod });
 };
 

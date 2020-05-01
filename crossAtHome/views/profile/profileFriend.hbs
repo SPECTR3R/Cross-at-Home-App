@@ -1,19 +1,37 @@
-<h1>{{profileID.name}}</h1>
-<img src="{{profileID.imagePath}}" alt="{{profileID.imageName}}" style="width: 110px; height: 110px">
+<div class="container padding">
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+      <img src="{{profileID.imagePath}}" alt="{{profileID.imageName}}" style="width: 120px; height: auto">
+    </div>
+    <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+        <h1>{{profileID.name}}</h1>
+    </div>
+  </div>
+</div>
+<br>
 
 {{#each wod}}
-<div>
-  <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
-  <h4>{{wodFocus}}</h4>
-  <h5>{{duration}}</h5>
-  <h5>{{desc}}</h5>
-  <p>{{level}}</p>
-  <p>{{record}}</p>
-</div>
-<hr>
-{{/each}}
+<div class="container padding">
+  <div class="row padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
 
-<a href="/profile/all">Vuelve a Todos los Perfiles</a>
-<h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
-<br>
-<h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+      <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
+      <h4>{{wodFocus}}</h4>
+      <h5>{{duration}}</h5>
+      <h5>{{desc}}</h5>
+      <p>{{level}}</p>
+      <div class="chalkBoard">
+        <textarea name="body" rows="4" disabled> {{record}}</textarea>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+    </div>
+    <hr class="my-4">
+  </div>
+</div>
+{{/each}}

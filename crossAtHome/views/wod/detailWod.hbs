@@ -1,47 +1,94 @@
-<div>
-  <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 70px; height: 70px">
-  <h5>{{this.userId.name}}</h5>
-  <h3><strong>{{wodName}}</strong></h3>
-  <br>
-  <h5>{{wodFocus}}</h5>
-  <p><strong>{{duration}}</strong></p>
-  <p>{{desc}}</p>
-  <strong>{{level}}</strong>
-  <p>{{record}}</p>
-  {{#if esElMismoUsuarioPost}}
-  <a href='/editWodPost/{{this._id}}' method="POST">Editar tu WOD</a>
-  <form action="/deleteWod/{{_id}}" method="POST">
-    <button type="submit">Borrar WOD</button>
-  </form>
-  {{/if}}
-  <hr>
-  {{#each comments}}
-  <form action="/deleteComment/{{_id}}" method="POST">
-    <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 35px; height: 35px">
-    <h5>{{this.userId.name}}</h5>
-    <p>{{this.body}}</p>
-    {{#ifCond ../usuarioConectado  this.userId._id}}
-    <a href='/editComment/{{../this._id}}' method="POST">Editar Comentario</a>
-    <button type="submit">Borrar</button>
-    {{/ifCond}}
-  </form>
-  <br>
-  <hr>
-  {{/each}}
-  <form action="/createComment/{{_id}}" method="POST">
-    <div>
-      <textarea name="body" rows="3"></textarea>
+<div class="container padding">
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
     </div>
-    <button type="submit">Comentar</button>
-  </form>
-  <div>
-    <a href="/doWodView/{{_id}}" method="POST">Realizar WOD</a>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+      <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 120px; height:auto">
+    </div>
+    <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+      <h5>{{this.userId.name}}</h5>
+    </div>
   </div>
 </div>
-
-<h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
 <br>
-<h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+<div class="container padding">
+  <div class="row padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
 
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+      <h3><strong>{{wodName}}</strong></h3>
+      <br>
+      <h5>{{wodFocus}}</h5>
+      <p><strong>{{duration}}</strong></p>
+      <p>{{desc}}</p>
+      <strong>{{level}}</strong>
+      <div class="chalkBoard">
+        <textarea name="body" rows="4" disabled> {{record}}</textarea>
+      </div>
+      <div>
+        {{#if esElMismoUsuarioPost}}
+        <a href='/editWodPost/{{this._id}}' method="POST">Editar tu WOD</a>
+        <form action="/deleteWod/{{_id}}" method="POST">
+          <button type="submit">Borrar WOD</button>
+        </form>
+        {{/if}}
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
 
-<window class="alert"></window>
+    </div>
+    <hr>
+  </div>
+  {{#each comments}}
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <div class="row text-center padding align-items-center">
+        <img class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" src="{{this.userId.imagePath}}"
+          alt="{{this.userId.imageName}}">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <strong>
+            <p>{{this.userId.name}}:</p>
+          </strong>
+        </div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+          <p>{{this.body}}</p>
+        </div>
+        {{#ifCond ../usuarioConectado  this.userId._id}}
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <a href='/editComment/{{../this._id}}' method="POST">Editar</a>
+          <form action="/deleteComment/{{../this._id}}" method="POST">
+            <button type="submit">Borrar</button>
+          </form>
+        </div>
+        {{/ifCond}}
+      </div>
+    </div>
+    <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+
+    </div>
+    <br>
+    <hr>
+  </div>
+  {{/each}}
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <form action="/createComment/{{_id}}" method="POST">
+        <textarea name="body" rows="3" cols="60"></textarea>
+        <button type="submit">Comentar</button>
+      </form>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <a class="btn btn-info" href="/doWodView/{{_id}}" method="POST" role="button">Realizar WOD</a>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,19 @@
-<div class="container">
-  <h2>Edit Profile</h2>
-  <img src="{{imagePath}}" alt="{{imageName}}" style="width: 150px; height: auto"><br>
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+<div class="container padding">
+  <div class="row padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+    </div>
+    <strong><h1 class="text-center">Edita tu Perfil:</h1></strong>
+  </div>
+</div>
+<div class="container padding">
+  <div class="row padding align-items-center">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+      <div class="col-xs-12">
+      <img src="{{imagePath}}" alt="{{imageName}}" style="width: 150px; height: auto"><br>
+      </div>
       <div class="col-xs-2">
         <label for="ex1">Nombre</label>
         <input class="form-control" id="ex3" type="text" name="name" type="text" placeholder="Nombre" value="{{name}}">
@@ -26,13 +38,21 @@
           value="{{height}}">
       </div>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+    </div>
   </div>
   <div class="row text-center padding align-items-center">
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
       <label for="profile_pic">Imagen de Perfil</label>
       <input name="profilePic" type="file" accept=".jpg, .png, .jpeg"><br><br>
       <input type="button" class="btn btn-info" type="submit" value="Editar Perfil">
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+    </div>
   </div>
-  </form>
 </div>

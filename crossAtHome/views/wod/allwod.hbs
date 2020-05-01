@@ -4,11 +4,11 @@
   <div class="row text-center padding align-items-center">
     <!-- photo -->
     <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
-      <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 150px; height: auto">
+      <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 120px; height: auto">
     </div>
     <!-- middle -->
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-      <h5>{{userId.name}} completó la rutina <br> ''{{wodName}}'' </h5>
+      <h5><a href="/profile/{{userId._id}}">{{userId.name}}</a> completó la rutina <br> ''{{wodName}}'' </h5>
       <h6>Nivel: {{level}} </h6>
       <!-- chalkBoard -->
       <div class="chalkBoard">
@@ -23,4 +23,3 @@
   <hr class="my-4">
 </div>
 {{/each}}
-
