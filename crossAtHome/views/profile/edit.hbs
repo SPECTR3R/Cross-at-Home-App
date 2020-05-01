@@ -1,13 +1,14 @@
 <h2>Edit Profile</h2>
 <form action="/profile/edit" method="POST" enctype="multipart/form-data">
-  <input name="name" type="text" placeholder="Nombre" value="{{name}}"><br>
-  <input name="email" type="text" placeholder="Correo Electronico" value="{{email}}"><br>
+  <img src="{{imagePath}}" alt="{{imageName}}" style="width: 100px; height: 125px"><br>
+  <input name="name" type="text" placeholder="Nombre" value="{{name}}"><label for="Name">Nombre</label><br>
+  <input name="email" type="text" placeholder="Correo Electronico" value="{{email}}"><label for="Email">Correo Electrónico</label><br>
   <input name="age" type="number" placeholder="Edad" value="{{age}}"><label for="Age">Años</label><br>
   <input name="weight" type="number" placeholder="Peso" value="{{weight}}"><label for="Kilograms">Kilos</label><br>
   <input name="height" type="number" placeholder="Estatura" value="{{height}}"><label
     for="Meters">Centimetros</label><br>
-  <input name="profilePic" type="file" placeholder="Profile Picture"><br>
-  <input type="submit" value="Edit Profile">
+  <input name="profilePic" type="file" accept=".jpg, .png, .jpeg"><label for="profile_pic">Imagen de Perfil</label><br>
+  <input type="submit" value="Editar Perfil">
 </form>
 
 <h4><a href="/profile">Volver a mi Perfil</a></h4>

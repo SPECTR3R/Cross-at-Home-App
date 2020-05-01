@@ -4,7 +4,7 @@ const router = express.Router();
 const {
   listView,
   detailView,
-  yourWodsView,
+  //yourWodsView,
   createWodView,
   createWodProcess,
   doWodView,
@@ -31,7 +31,7 @@ router.post('/createWod', isLoggedIn, createWodProcess);
 router.get('/doWodView/:id', isLoggedIn, doWodView);
 router.post('/doWodView', isLoggedIn, doWodProcess);
 
-router.get('/yourWods', isLoggedIn, yourWodsView);
+//router.get('/yourWods', isLoggedIn, yourWodsView);
 
 router.get('/editWodPost/:id', isLoggedIn, editWodView);
 router.post('/editWodPost/:id', isLoggedIn, editWodProcess);
@@ -42,9 +42,9 @@ router.post('/deleteWod/:id', isLoggedIn, deleteWodPost)
 
 router.post('/createComment/:id', isLoggedIn, createComment);
 
-router.post('/deleteComment/:id', isLoggedIn, deleteComment);
-
 router.get('/editComment/:id', isLoggedIn, editCommentView);
 router.post('/editComment/:id', isLoggedIn, editCommentProcess);
+
+router.post('/deleteComment/:id', isLoggedIn, deleteComment);
 
 module.exports = router;

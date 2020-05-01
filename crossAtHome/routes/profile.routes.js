@@ -2,6 +2,7 @@ const router = require('express').Router();
 const passport = require('passport');
 
 // Import controllers
+
 const uploadCloud = require('../config/cloudinary');
 
 const { isLoggedIn } = require('../middlewares');

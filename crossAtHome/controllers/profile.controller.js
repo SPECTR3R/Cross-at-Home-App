@@ -1,9 +1,10 @@
 const User = require('../models/User.model');
 const WodPost = require('../models/WodPost.model');
 
-exports.profileGet = (req, res) => {
-  const { user } = req;
-  res.render('profile/profile', user);
+exports.profileGet = async (req, res) => {
+  const user = req.user;
+  const wods = await WodPost.find({ userId: req.user.id }).populate('comments').populate({ path: 'comments', populate: { path: 'userId', model: 'User' } });
+  res.render('profile/profile', { user, wods });
 };
 
 exports.profileEditGet = async (req, res) => {
@@ -23,19 +24,19 @@ exports.allProfiles = async (req, res) => {
   res.render('profile/allProfiles', { profiles });
 };
 
-exports.profileIdView = async (req, res) => {
-  const profileID = await User.findById(req.params.id);
-  res.render('profile/profileFriend', profileID);
-};
+// exports.profileIdView = async (req, res) => {
+//   const profileID = await User.findById(req.params.id);
+//   res.render('profile/profileFriend', profileID);
+// };
 
 exports.profileIdView = async (req, res) => {
   const userId = req.params.id
+  const profileID = await User.findById( userId )
   const wod = await WodPost.find({userId}).populate('userId');
-  res.render('profile/profileFriend', { wod });
+  res.render('profile/profileFriend', { wod, profileID });
 };
 
 exports.delProfile = async (req, res) => {
-  console.log(req.user._id)
   await User.findByIdAndDelete(req.user.id)
   res.redirect('/')
 }

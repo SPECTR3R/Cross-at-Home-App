@@ -13,7 +13,7 @@ exports.signupPost = (req, res) => {
     User.register({ name, email }, password)
       .then(() => {
         passport.authenticate('local')(req, res, () => {
-          res.redirect('/profile');
+          res.redirect('/wods');
         });
       })
       .catch(err => {
@@ -24,7 +24,7 @@ exports.signupPost = (req, res) => {
 };
 
 exports.loginPost = passport.authenticate('local', {
-  successRedirect: '/profile',
+  successRedirect: '/wods',
   failureRedirect: ('/'),
   failureFlash: true ,
 });
@@ -32,7 +32,7 @@ exports.loginPost = passport.authenticate('local', {
 exports.loginFacebook = passport.authenticate('facebook', { scope: ['email'] });
 
 exports.loginFacebookCb = passport.authenticate('facebook', {
-  successRedirect: '/profile',
+  successRedirect: '/wods',
   failureRedirect: '/',
   scope: ['email'],
 });
@@ -45,7 +45,7 @@ exports.loginGoogle = passport.authenticate('google', {
 });
 
 exports.loginGoogleCb = passport.authenticate('google', {
-  successRedirect: '/profile',
+  successRedirect: '/wods',
   failureRedirect: '/',
 });
 

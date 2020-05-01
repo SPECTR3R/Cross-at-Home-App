@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+
+// Import middlewares
+
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
 
 /* GET home page */

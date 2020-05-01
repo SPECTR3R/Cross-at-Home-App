@@ -1,7 +1,34 @@
-<h1>Hola Bienvenido {{name}}</h1>
 <div>
-  <img src="{{imagePath}}" alt="{{imageName}}" style="width: 110px; height: 110px">
+  <img src="{{user.imagePath}}" alt="{{user.imageName}}" style="width: 110px; height: 110px">
+  <h1>{{user.name}}</h1><br>
+  <h5>Edad: {{user.age}}años      Estatura: {{user.height}}Centimetros      Peso: {{user.weight}}Kilos</h5>
 </div>
+<br>
+<br>
+<br>
+<h2>Your WOD's</h2>
+<hr>
+<br>
+{{#each wods}}
+<div>
+  <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
+  <h4>{{duration}}</h4><br>
+  <h5>{{desc}}</h5>
+  <p>{{level}}</p><br><br>
+  <p>{{record}}</p>
+  {{#each comments}}
+  <hr>
+  <h5>{{this.userId.name}}</h5>
+  <p>{{this.body}}</p>
+  {{/each}}
+</div>
+<hr>
+<br>
+  <form action="/deleteWod/{{_id}}" method="POST">
+  <button type="submit">Borrar WOD</button>
+  </form>
+<hr>
+{{/each}}
 
 <h4><a href="/profile/edit">Editar Perfil</a></h4><br>
 <h4><a href="/wods">Ver todos los WOD's</a></h4><br>

@@ -15,7 +15,7 @@
   <h5>{{this.userId.name}}</h5>
   <p>{{this.body}}</p>
   {{#ifCond ../usuarioConectado  this.userId._id}}
-  <a href='/editComment/{{this._id}}' method="POST">Editar Comentario</a>
+  <a href='/editComment/{{../this._id}}' method="POST">Editar Comentario</a>
   <button type="submit">Borrar Comentario</button>
   {{/ifCond}}
   </form>

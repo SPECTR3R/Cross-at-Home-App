@@ -44,12 +44,12 @@ exports.doWodProcess = async (req, res) => {
   res.redirect('/profile');
 };
 
-exports.yourWodsView = async (req, res) => {
-  const wods = await WodPost.find({ userId: req.user.id })
-    .populate('comments')
-    .populate({ path: 'comments', populate: { path: 'userId', model: 'User' } });
-  res.render('wod/yourWods', { wods });
-};
+// exports.yourWodsView = async (req, res) => {
+//   const wods = await WodPost.find({ userId: req.user.id })
+//     .populate('comments')
+//     .populate({ path: 'comments', populate: { path: 'userId', model: 'User' } });
+//   res.render('wod/yourWods', { wods });
+// };
 
 exports.createComment = async (req, res) => {
   const comment = await WodComment.create({ userId: req.user.id, body: req.body.body });
@@ -92,7 +92,6 @@ exports.editWodView = async (req, res) => {
 }
 
 exports.editWodProcess = async ( req, res ) => {
-  console.log(req.params.id)
   await WodPost.findByIdAndUpdate( req.params.id, { $set: { ...req.body } }, { new: true } )
   res.redirect(`/wod/${req.params.id}`)
 }
