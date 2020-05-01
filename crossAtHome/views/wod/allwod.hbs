@@ -2,16 +2,20 @@
 
 <div class="container padding">
   <div class="row text-center padding align-items-center">
+    <!-- photo -->
     <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
       <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 150px; height: auto">
     </div>
+    <!-- middle -->
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
       <h5>{{userId.name}} completó la rutina <br> ''{{wodName}}'' </h5>
       <h6>Nivel: {{level}} </h6>
+      <!-- chalkBoard -->
       <div class="chalkBoard">
-        <textarea name="body" rows="5"> {{record}}</textarea>
+        <textarea name="body" rows="5" disabled> {{record}}</textarea>
       </div>
     </div>
+    <!-- buttons -->
     <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
       <a class="btn btn-info" href="/wod/{{_id}}" role="button">Ver</a>
     </div>
