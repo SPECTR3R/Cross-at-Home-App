@@ -1,16 +1,23 @@
 {{#each wod}}
-  <div>
-  <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 70px; height: 70px">
-  <h4>{{userId.name}}</h4>
-  <a href="/wod/{{_id}}"><h5>{{wodName}}</h5></a>
-  <p>{{level}}</p>
-  </div>
-  <div>
-  <h4>{{record}}</h4>
-  </div>
-  <hr>
-  {{/each}}
 
+<div class="container padding">
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-3 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+      <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 70px; height: auto">
+    </div>
+    <div class="col-xs-6 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <h4>{{userId.name}} terminó la rutina ''{{wodName}}'' </h4>
+      <h5>Nivel: {{level}} </h5>
+      <h4>{{record}}</h4>
+      <div class="chlakBoard">
+        <p> </p>
+      </div>
 
-<h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
-<br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+    </div>
+    <div class="col-xs-3 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <a class="btn btn-info" href="/wod/{{_id}}" role="button">Ver detalle</a>
+    </div>
+  </div>
+  <hr class="my-4">
+</div>
+{{/each}}
