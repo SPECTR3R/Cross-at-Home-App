@@ -1,21 +1,66 @@
-<!-- wod timer -->
-<link rel="stylesheet" href="/stylesheets/Timer.css"/>
-<div id="cStateContainer"></div>
-<script src="/javascripts/Timer.js"></script>
-<!-- wod timer end -->
+<h2 class="text-center mt-2">Bienvenido esta es tu rutina de hoy, disfrútala :D</h2>
+
+<hr class="my-4">
+<h3 class="text-center m-3">¿Cómo funciona? </h3>
+
+<div class="container-fluid padding">
+    <div class="row text-center padding align-items-center">
+        <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <img src=" images/workout1.png" alt="instructions1">
+            <h5> Tú eres lo que mides</h5>
+            <p>Usa nuestro Wod Timer para mantener un récord de rutina </p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <img src="images/workout2.png" alt="instructions2">
+            <h5>Comparte</h5>
+            <p> Comparte, la comunidad de cross te espera </p>
+        </div>
+
+    </div>
+</div>
+
+<hr class="my-4">
 
 
-<h2>Edit your workout and Rock on</h2>
-<form action="/doWodView" method="POST">
-    <input name="wodName" type="text" placeholder="wodName" value="{{wodName}}"><br>
-    <input name="wodFocus" type="text" placeholder="wodFocus" value="{{wodFocus}}"><br>
-    <input name="duration" type="text" placeholder="duration" value="{{duration}}"><br>
-    <input name="desc" type="text" placeholder="desc" value="{{desc}}"><br>
-    <input name="level" type="text" placeholder="level" value="{{level}}"><br>
-    <input name="record" type="text" placeholder="describe how you felt after the wod" value=""><br>
-    <input name="userId" type="text" placeholder="userID" value="{{userId}}" hidden><br>
-    <input type="submit" value="reigstra tu progress">
-</form>
 
-<h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
-<br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+
+
+
+
+
+
+<div class="container padding">
+    <div class="row padding align-items-center">
+        <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 ">
+            <!-- wod timer -->
+            <link rel="stylesheet" href="/stylesheets/Timer.css" />
+            <div id="cStateContainer"></div>
+            <script src="/javascripts/Timer.js"></script>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 col-xl-8">
+            <!-- Form -->
+            <form class="m-0" action="/doWodView" method="POST">
+                <input name="userId" type="text" value="{{userId}}" hidden>
+                <label class="text-left text-info m-0 p-0" for="wodName">Nombre de la rutina</label>
+                <input class="form-control md-2" name="wodName" type="text" value="{{wodName}}">
+                <label class="text-left text-info m-0 p-0" for="wodFocus">Enfoque</label>
+                <input class="form-control md-2" name="wodFocus" type="text" value="{{wodFocus}}">
+                <label class="text-left text-info m-0 p-0" for="duration">Duración</label>
+                <input class="form-control md-2" name="duration" type="text" value="{{Duración}}">
+                <label class="text-left text-info m-0 p-0" for="desc">Descripción</label>
+                <input class="form-control md-2" name="desc" type="text" value="{{desc}}">
+                <label class="text-left text-info m-0 p-0" for="level">Nivel</label>
+                <input class="form-control md-2" name="level" type="text" value="{{level}}">
+
+
+                <div class="chalkBoard mt-2 md-2">
+                    <textarea type="textarea" name="record" rows="5" style="width: 100%;"
+                        placeholder="Pizarra virtual"></textarea>
+                </div>
+
+                {{!-- <input name="record" type="textarea" placeholder="pizarra virtual" value=""> --}}
+                <input type="submit" value="!Comparte tu record!" class="btn btn-info">
+            </form>
+        </div>
+    </div>
+</div>
