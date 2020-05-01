@@ -35,15 +35,19 @@
 
 <!--- Jumbotron -->
 <div class="container-fluid jumbotron m-0 p-0">
-  <div class="row jumbotron align-items-center">
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-      <img src="images/appLogo.png" class="w-100 p-2" alt="appLogo">
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-      <p class="lead text-center mt-2"> Cross At Home es una red de atletas aficionados al cross training.
-        No dejes perder tu buena condición física, ¿Qué esperas? <br> <a href="#beginHere"> ¡Entrena con nosotros hoy
-          mismo!</a>
-      </p>
+  <div class="container">
+    <div class="row jumbotron align-items-center ">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+        <div class="d-flex justify-content-center">
+          <img src="images/appLogo.png" class="crossLogo" alt="appLogo">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <p class="lead text-center mt-2 "> Cross At Home es una red de atletas aficionados al cross training.
+          No dejes perder tu buena condición física, ¿Qué esperas?  <a href="#beginHere"> ¡Entrena con nosotros hoy
+            mismo!</a>
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -81,13 +85,13 @@
       authFlag = authFlag === true ? false : true;
       const nameInput = authFlag ? `
                     <div class="input-group">
-                       <span class="input-group-addon"><i class="fas fa-user"></i></i></span>
-                       <input type="text" class="form-control" name="name" placeholder="Nombre de usuario: ...">
+                       <span class="input-group-addon bg-dark"><i class="fas fa-user"></i></i></span>
+                       <input type="text" class="form-control" name="name" placeholder="Nombre de usuario: ">
                     </div>` : '';
       const verifyInput = authFlag ? `
                     <div class="input-group">
-                       <span class="input-group-addon"><i class="fas fa-lock"></i></i></span>
-                       <input type="password" class="form-control" name="verify" placeholder="Repite Contraseña...">
+                       <span class="input-group-addon bg-dark"><i class="fas fa-lock"></i></i></span>
+                       <input type="password" class="form-control" name="verify" placeholder="Repite Contraseña">
                     </div>` : '';
       const errorHandleBars = `
                     <div>
@@ -113,12 +117,12 @@
             <a class="icon-holder dsp-flex" href="/auth/facebook"> <i class="fab fa-facebook-f"></i></a>
           </li>
         </ul>` + nameInput + `<div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-envelope "></i></span>
-          <input type="email" class="form-control" name="email" placeholder="Correo electrónico:...">
+          <span class="input-group-addon bg-dark"><i class="fa fa-envelope "></i></span>
+          <input type="email" class="form-control" name="email" placeholder="Correo electrónico:">
         </div>
         <div class="input-group">
-          <span class="input-group-addon"><i class="fas fa-lock"></i></span>
-          <input type="password" class="form-control" name="password" placeholder="Contraseña:...">
+          <span class="input-group-addon bg-dark"><i class="fas fa-lock"></i></span>
+          <input type="password" class="form-control" name="password" placeholder="Contraseña:">
         </div>` + verifyInput + errorHandleBars + `<div class="footer text-center">
           <input type="submit" class="btn btn-neutral btn-round btn-lg" value="${
         authFlag ? '¡Únete!' : 'Inicia sesión'
