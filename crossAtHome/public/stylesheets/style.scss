@@ -19,11 +19,13 @@ a {
 .nav-link {
   font-size: 1.1em !important;
 }
+
 .carousel-caption {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .carousel-caption h1 {
   font-size: 500%;
   color: white;
@@ -31,6 +33,7 @@ a {
   text-shadow: 1px 1px 10px #17a2b0;
 
 }
+
 .carousel-caption h3 {
   color: white;
   text-shadow: 1px 1px 10px black;
@@ -38,10 +41,49 @@ a {
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
+  .carousel-caption h1 {
+    font-size: 150%;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px #17a2b0;
+  }
+
+  .carousel-caption h3 {
+    font-size: 100%;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+  }
 }
+
 @media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 150%;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px #17a2b0;
+  }
+
+  .carousel-caption h3 {
+    font-size: 100%;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+  }
+
 }
+
 @media (max-width: 576px) {
+  .carousel-caption h1 {
+    font-size: 100%;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px #17a2b0;
+  }
+
+  .carousel-caption h3 {
+    color: white;
+    text-shadow: 1px 1px 10px black;
+    font-size: 75%;
+  }
 }
 
 /*---Firefox Bug Fix --*/
@@ -52,6 +94,7 @@ a {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }
+
 /*--- Bootstrap Padding Fix --*/
 [class*='col-'] {
   padding: 1rem;
