@@ -1,46 +1,77 @@
-<div>
-  <img src="{{user.imagePath}}" alt="{{user.imageName}}" style="width: 110px; height: 110px">
-  <h1>{{user.name}}</h1><br>
-  <h5>Edad: {{user.age}}años      Estatura: {{user.height}}Centimetros      Peso: {{user.weight}}Kilos</h5>
+<div class="container padding">
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+      <img src="{{user.imagePath}}" alt="{{user.imageName}}" style="width: 150px; height: auto">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <h1>{{user.name}}</h1><br>
+      <div>
+        <h5>Edad: {{user.age}}años</h5>
+        <h5>Estatura: {{user.height}}Centimetros</h5>
+        <h5>Peso: {{user.weight}}Kilos</h5>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
+      <a class="btn btn-info" href="/profile/edit" role="button">Editar Perfi</a>
+    </div>
+  </div>
+</div>
+<hr class="my-4">
+<br>
+<div class="container padding">
+  <div class="row padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+    </div>
+    <strong><h1 class="text-center">Your WOD's:</h1></strong>
+  </div>
 </div>
 <br>
-<br>
-<br>
-<h2>Your WOD's</h2>
-<hr>
-<br>
+
 {{#each wods}}
-<div>
-  <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
-  <h4>{{duration}}</h4><br>
-  <h5>{{desc}}</h5>
-  <p>{{level}}</p><br><br>
-  <p>{{record}}</p>
+
+<div class="container padding">
+  <div class="row padding align-items-center">
+
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <h3><a href="/wod/{{_id}}">{{wodName}}</a></h3>
+      <h4>{{duration}}</h4><br>
+      <h5>{{desc}}</h5>
+      <p>{{level}}</p><br>
+      <div class="chalkBoard d-flex">
+        <textarea name="body" rows="4" disabled> {{record}}</textarea>
+        <form  action="/deleteWod/{{_id}}" method="POST">
+        <button  class="btn btn-info" type="submit">Borrar WOD</button>
+      </form>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
+      {{!-- <form action="/deleteWod/{{_id}}" method="POST">
+        <button class="btn btn-info" type="submit">Borrar WOD</button>
+      </form> --}}
+    </div>
+  </div>
   {{#each comments}}
-  <hr>
-  <h5>{{this.userId.name}}</h5>
-  <p>{{this.body}}</p>
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <div class="row text-center padding align-items-center">
+        <img class="col-md-1 col-lg-1 col-xl-1" src="{{userId.imagePath}}" alt="{{userId.imageName}}"
+          style="width: 35px; height: auto">
+        <strong><p>{{this.userId.name}}:</p></strong>   <p>{{this.body}}</p>
+      </div>
+      <hr class="my-4">
+    </div>
+  </div>
   {{/each}}
+  <br>
 </div>
-<hr>
-<br>
-  <form action="/deleteWod/{{_id}}" method="POST">
-  <button type="submit">Borrar WOD</button>
-  </form>
-<hr>
+
 {{/each}}
-
-<h4><a href="/profile/edit">Editar Perfil</a></h4><br>
-<h4><a href="/wods">Ver todos los WOD's</a></h4><br>
-<h4><a href="/profile/all">Ver todos los Perfiles</a></h4><br>
-<h4><a href="/createWod">Genera un nuevo WOD!</a></h4><br>
-<h4><a href="/yourWods">Ver tus WOD's</a></h4><br>
-
-<a href="/logout">
-  <button>
-    Logout
-  </button>
-</a>
 
 <a href="/profile/delete/{{_id}}">
   <button>
