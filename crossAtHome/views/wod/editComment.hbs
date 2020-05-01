@@ -1,8 +1,30 @@
-<h2>Editar Comentario</h2>
 <form action='/editComment/{{_id}}' method="POST">
 <textarea name="body" id="body" rows="3">{{body}}</textarea>
   <input type="submit" value="Edit Comment">
 </form>
+
+
+
+<div class="container padding">
+<h2>Editar Comentario</h2>
+  <div class="row text-center padding align-items-center">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+      <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 150px; height: auto">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <h5>{{userId.name}} completó la rutina <br> ''{{wodName}}'' </h5>
+      <h6>Nivel: {{level}} </h6>
+      <div class="chalkBoard">
+        <textarea name="body" rows="5"> {{record}}</textarea>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
+      <a class="btn btn-info" href="/wod/{{_id}}" role="button">Ver</a>
+    </div>
+  </div>
+  <hr class="my-4">
+</div>
+
 
 <h4><a href="/profile">Volver a mi Perfil</a></h4>
 <br><h4><a href="/wods">Ver todos los WOD's</a></h4><br>

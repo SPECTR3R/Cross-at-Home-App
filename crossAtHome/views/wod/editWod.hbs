@@ -1,17 +1,39 @@
-<h2>Edit WOD</h2>
-<div>
-  <form action='/editWodPost/{{_id}}' method="POST">
-    <input class="form-control" name="wodName" type="text" "Enfoque de Entrenamiento" value="{{wodName}}">
-    <input class="form-control" name="wodFocus" type="text" placeholder="Correo Electronico" value="{{wodFocus}}"><br>
-    <input class="form-control" name="duration" type="text" placeholder="Duración" value="{{duration}}"><br>
-    <input class="form-control" name="desc" type="text" placeholder="Rutina a Ejecutar" value="{{desc}}"><br>
-    <input class="form-control" name="level" type="text" placeholder="Nivel" value="{{level}}"><br>
-    <input class="form-control" name="record" type="text" placeholder="Coloca tu Record" value="{{record}}"><br>
-    <input type="submit" value="Edit WOD">
-  </form>
-</div>
+<div class="container">
+  <div class="row text-center padding align-items-center">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <h2 class="mt-2">Edit WOD</h2>
+    </div>
+  </div>
+  <div class="row text-center padding align-items-center justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <form action='/editWodPost/{{_id}}' method="POST">
+        <div class="col-xs-2">
+          <input class="form-control" id="ex3" name="wodName" type="text" placeholder="Nombre del WOD"
+            value="{{wodName}}">
+        </div>
+        <div class="col-xs-2">
+          <input class="form-control" name="wodFocus" type="text" placeholder="Enfoque del entrenamiento"
+            value="{{wodFocus}}"><br>
+        </div>
+        <div class="col-xs-2">
 
-<a href="/profile" class="badge badge-dark">Volver a mi Perfil</a>
-<br>
-<a href="/wods" class="badge badge-dark">Ver todos los WOD's</a>
-<br>
+          <input class="form-control" name="duration" type="text" placeholder="Duración" value="{{duration}}"><br>
+        </div>
+        <div class="col-xs-2">
+          <input class="form-control" name="desc" type="text" placeholder="Rutina a Ejecutar" value="{{desc}}"><br>
+        </div>
+        <div class="col-xs-2">
+          <input class="form-control" name="level" type="text" placeholder="Nivel" value="{{level}}"><br>
+        </div>
+        <div class="col-xs-2">
+          <input class="form-control" name="record" type="text" placeholder="Coloca tu Record" value="{{record}}"><br>
+        </div>
+      </form>
+      <div class="row text-center padding align-items-center">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+          <input type="button" class="btn btn-info" type="submit" value="Editar WOD">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
