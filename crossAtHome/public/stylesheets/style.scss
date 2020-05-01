@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
+@font-face {
+  font-family: 'Chalktastic';
+  src: url('/fonts/Chalktastic.woff') format('woff'),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ url('/fonts/Chalktastic.ttf')
+      format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
 html,
 body {
   height: 100%;
@@ -31,12 +38,28 @@ a {
   color: white;
   text-transform: uppercase;
   text-shadow: 1px 1px 10px #17a2b0;
-
 }
 
 .carousel-caption h3 {
   color: white;
   text-shadow: 1px 1px 10px black;
+}
+
+.chalkBoard {
+  margin: 0px;
+  padding: 0;
+}
+
+.chalkBoard textarea {
+  background-color: #17a2b0;
+  font-weight: 700;
+  padding: 15px;
+  border-top: 5px solid burlywood;
+  width: 85%;
+  height: auto;
+
+  color: white;
+  font-family: Chalktastic;
 }
 
 /*---Media Queries --*/
@@ -68,7 +91,6 @@ a {
     color: white;
     text-shadow: 1px 1px 10px black;
   }
-
 }
 
 @media (max-width: 576px) {

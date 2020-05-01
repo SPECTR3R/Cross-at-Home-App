@@ -11,13 +11,13 @@
   {{#if esElMismoUsuarioPost}}
   <a href='/editWodPost/{{this._id}}' method="POST">Editar tu WOD</a>
   <form action="/deleteWod/{{_id}}" method="POST">
-  <button type="submit">Borrar WOD</button>
+    <button type="submit">Borrar WOD</button>
   </form>
   {{/if}}
   <hr>
   {{#each comments}}
   <form action="/deleteComment/{{_id}}" method="POST">
-  <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 35px; height: 35px">
+    <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 35px; height: 35px">
     <h5>{{this.userId.name}}</h5>
     <p>{{this.body}}</p>
     {{#ifCond ../usuarioConectado  this.userId._id}}

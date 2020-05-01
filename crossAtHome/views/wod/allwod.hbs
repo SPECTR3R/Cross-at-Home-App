@@ -2,20 +2,18 @@
 
 <div class="container padding">
   <div class="row text-center padding align-items-center">
-    <div class=" col-xs-3 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-      <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 70px; height: auto">
+    <div class=" col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 ">
+      <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 150px; height: auto">
     </div>
-    <div class="col-xs-6 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-      <h4>{{userId.name}} terminó la rutina ''{{wodName}}'' </h4>
-      <h5>Nivel: {{level}} </h5>
-      <h4>{{record}}</h4>
-      <div class="chlakBoard">
-        <p> </p>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <h5>{{userId.name}} completó la rutina <br> ''{{wodName}}'' </h5>
+      <h6>Nivel: {{level}} </h6>
+      <div class="chalkBoard">
+        <textarea name="body" rows="5"> {{record}}</textarea>
       </div>
-
     </div>
-    <div class="col-xs-3 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-      <a class="btn btn-info" href="/wod/{{_id}}" role="button">Ver detalle</a>
+    <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1">
+      <a class="btn btn-info" href="/wod/{{_id}}" role="button">Ver</a>
     </div>
   </div>
   <hr class="my-4">
