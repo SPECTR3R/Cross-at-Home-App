@@ -50,10 +50,14 @@ a {
   color: white;
   font-family: Chalktastic; }
 
+.crossLogo {
+  height: 300px;
+  width: 300px; }
+
 /*---Media Queries --*/
 @media (max-width: 992px) {
   .carousel-caption h1 {
-    font-size: 150%;
+    font-size: 450%;
     color: white;
     text-transform: uppercase;
     text-shadow: 1px 1px 10px #17a2b0; }
@@ -64,7 +68,7 @@ a {
 
 @media (max-width: 768px) {
   .carousel-caption h1 {
-    font-size: 150%;
+    font-size: 300%;
     color: white;
     text-transform: uppercase;
     text-shadow: 1px 1px 10px #17a2b0; }
@@ -77,7 +81,7 @@ a {
 
 @media (max-width: 576px) {
   .carousel-caption h1 {
-    font-size: 100%;
+    font-size: 200%;
     color: white;
     text-transform: uppercase;
     text-shadow: 1px 1px 10px #17a2b0; }

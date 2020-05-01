@@ -2,9 +2,15 @@
 
 ## App CrossAtHome
 
+![Timer](/crossAtHome/public/images/PantPrinc.png)
+
+
 En nuestra app encontraras WOD's de CrossFit que puedes realizar en casa,
 ademas de que tiene la modalidad de red social que te permitara estar en
 contacto con lo compañeros de tú box.
+
+![Timer](/crossAtHome/public/images/Timer.png)
+
 
 Link para disfrutar de la app:
 [Aqui]()

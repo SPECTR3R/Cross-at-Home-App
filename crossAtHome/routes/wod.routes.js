@@ -4,7 +4,6 @@ const router = express.Router();
 const {
   listView,
   detailView,
-  //yourWodsView,
   createWodView,
   createWodProcess,
   doWodView,
@@ -31,7 +30,6 @@ router.post('/createWod', isLoggedIn, createWodProcess);
 router.get('/doWodView/:id', isLoggedIn, doWodView);
 router.post('/doWodView', isLoggedIn, doWodProcess);
 
-//router.get('/yourWods', isLoggedIn, yourWodsView);
 
 router.get('/editWodPost/:id', isLoggedIn, editWodView);
 router.post('/editWodPost/:id', isLoggedIn, editWodProcess);

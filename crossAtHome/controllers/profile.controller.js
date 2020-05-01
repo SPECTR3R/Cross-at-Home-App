@@ -24,11 +24,6 @@ exports.allProfiles = async (req, res) => {
   res.render('profile/allProfiles', { profiles });
 };
 
-// exports.profileIdView = async (req, res) => {
-//   const profileID = await User.findById(req.params.id);
-//   res.render('profile/profileFriend', profileID);
-// };
-
 exports.profileIdView = async (req, res) => {
   const userId = req.params.id
   const profileID = await User.findById( userId )
