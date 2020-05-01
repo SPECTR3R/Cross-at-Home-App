@@ -10,7 +10,7 @@ exports.listView = async (req, res) => {
 exports.detailView = async (req, res) => {
   const wod = await WodPost.findById(req.params.id)
     .populate('comments')
-    .populate({ path: 'comments', populate: { path: 'userId', model: 'User' } });
+    .populate({ path: 'comments', populate: { path: 'userId', model: 'User' } }).populate('userId');
   wod.esElMismoUsuarioPost = false
   if ( String(wod.userId._id) === String(req.user._id) ){
     wod.esElMismoUsuarioPost = true
@@ -72,7 +72,7 @@ exports.deleteComment = async (req, res) => {
 
 exports.deleteWodPost = async (req, res) => {
   await WodPost.findByIdAndDelete(req.params.id);
-  res.redirect(`/yourWods`);
+  res.redirect(`/profile`);
 };
 
 exports.editCommentView = async (req, res) => {

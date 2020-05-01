@@ -1,23 +1,29 @@
 <div>
-  <strong>Name: {{wodName}}</strong>
+  <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 70px; height: 70px">
+  <h5>{{this.userId.name}}</h5>
+  <h3><strong>{{wodName}}</strong></h3>
   <br>
-  <h4>{{wodFocus}}</h4>
-  <h4>{{duration}}</h4>
-  <h4>{{desc}}</h4>
-  <h4>{{level}}</h4>
-  <h4>{{record}}</h4>
+  <h5>{{wodFocus}}</h5>
+  <p><strong>{{duration}}</strong></p>
+  <p>{{desc}}</p>
+  <strong>{{level}}</strong>
+  <p>{{record}}</p>
   {{#if esElMismoUsuarioPost}}
   <a href='/editWodPost/{{this._id}}' method="POST">Editar tu WOD</a>
+  <form action="/deleteWod/{{_id}}" method="POST">
+  <button type="submit">Borrar WOD</button>
+  </form>
   {{/if}}
   <hr>
   {{#each comments}}
   <form action="/deleteComment/{{_id}}" method="POST">
-  <h5>{{this.userId.name}}</h5>
-  <p>{{this.body}}</p>
-  {{#ifCond ../usuarioConectado  this.userId._id}}
-  <a href='/editComment/{{../this._id}}' method="POST">Editar Comentario</a>
-  <button type="submit">Borrar Comentario</button>
-  {{/ifCond}}
+  <img src="{{this.userId.imagePath}}" alt="{{this.userId.imageName}}" style="width: 35px; height: 35px">
+    <h5>{{this.userId.name}}</h5>
+    <p>{{this.body}}</p>
+    {{#ifCond ../usuarioConectado  this.userId._id}}
+    <a href='/editComment/{{../this._id}}' method="POST">Editar Comentario</a>
+    <button type="submit">Borrar</button>
+    {{/ifCond}}
   </form>
   <br>
   <hr>
@@ -34,7 +40,8 @@
 </div>
 
 <h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
-<br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+<br>
+<h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
 
 
 <window class="alert"></window>

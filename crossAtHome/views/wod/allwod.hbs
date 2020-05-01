@@ -1,16 +1,16 @@
-<div>
- <div>
-  {{#each wod}}
+{{#each wod}}
   <div>
-  <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 110px; height: 110px">
-  <h3>{{userId.name}}</h3>
-  <p>{{wodFocus}}</p>
+  <img src="{{userId.imagePath}}" alt="{{userId.imageName}}" style="width: 70px; height: 70px">
+  <h4>{{userId.name}}</h4>
+  <a href="/wod/{{_id}}"><h5>{{wodName}}</h5></a>
   <p>{{level}}</p>
-  <a href="/wod/{{_id}}">Ir al wod</a>
   </div>
+  <div>
+  <h4>{{record}}</h4>
+  </div>
+  <hr>
   {{/each}}
- </div>
-</div>
+
 
 <h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
 <br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
