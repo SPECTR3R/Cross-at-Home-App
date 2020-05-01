@@ -57,7 +57,6 @@ a {
   border-top: 5px solid burlywood;
   width: 85%;
   height: auto;
-
   color: white;
   font-family: Chalktastic;
 }
@@ -90,7 +89,12 @@ a {
     font-size: 100%;
     color: white;
     text-shadow: 1px 1px 10px black;
+
   }
+  .chalkBoard  {
+    height: 8em;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -106,6 +110,11 @@ a {
     text-shadow: 1px 1px 10px black;
     font-size: 75%;
   }
+
+  .chalkBoard  {
+    height: 13em;
+  }
+
 }
 
 /*---Firefox Bug Fix --*/

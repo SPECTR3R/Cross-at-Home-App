@@ -1,14 +1,18 @@
-<h1>Profiles List</h1>
-
 {{#each profiles}}
-<div>
-<img src="{{imagePath}}" alt="{{imageName}}" style="width: 75px; height: 75px">
-<h3>{{name}}</h3>
-<a href="/profile/{{_id}}"><button>Ver Perfil</button></a>
+
+<div class="container padding">
+  <div class="row text-center padding align-items-center">
+    <!-- photo -->
+    <div class=" col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 ">
+      <img src="{{imagePath}}" alt="{{imageName}}" style="width: 150px; height: auto">
+    </div>
+    <!-- middle -->
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <h3>{{name}}</h3>
+      <a class="btn btn-info" href="/profile/{{_id}}" role="button">Ver perfil</a>
+    </div>
+    <!-- buttons -->
+  </div>
+  <hr class="my-4">
 </div>
-<hr>
 {{/each}}
-
-
-<h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
-<br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>

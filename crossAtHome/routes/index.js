@@ -13,4 +13,9 @@ router.get('/', isNotLoggedIn, (req, res, next) => {
   res.render('index', { error });
 });
 
+router.get('/x', (req, res, next) => {
+   res.render('wod/doWod', );
+ });
+
+
 module.exports = router;

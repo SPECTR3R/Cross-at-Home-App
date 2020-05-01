@@ -1,38 +1,57 @@
-<div>
-    <strong>Hola
-        {{name}}</strong>
-    <br>
+<div class=" align-items-center">
 
-    <img src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjkxNTQ0MC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYxMzEzMzQyMn0.Gz-oOBipcmLH2HQlygSwRjL74fk5lHIlrYneAZZV1us/img.jpg?width=2000&height=2000"
-        alt="" style="width:400px;height:auto;">
-    <br>
-    <p>Es hora de iniciar tu entrenamiento en casa, en la siguiente forma
-        <br>
-        puedes escoger tu nivel de condicion fiśica
-        y nuestro sistema insteligente
-        <br>
-        escogera una rutina adecuada para tu nivel!</p>
+    <h2 class="text-center m-3"> <strong>Hola {{name}}</strong> </h2>
+    <div class="chalkBoard d-flex justify-content-center">
+        <textarea class="text-center" name="body" rows="3"
+            disabled> ¡Es hora de iniciar tu entrenamiento en casa!
+        Abajo, escoge tu nivel de experiencia entrenando y nuestro sistema inteligente escogera una rutina adecuada para tu nivel!</textarea>
+    </div>
+</div>
+<hr class="my-4">
+<h3 class="text-center m-3">¿Cómo funcionan los niveles en Cross Trainig? </h3>
 
-    <p>Atleta, Selecciona tu nivel aquí:</p>
+<div class="container-fluid padding">
+    <div class="row text-center padding align-items-center">
+        <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+            <img src=" images/level1.png" alt="principiante" class="w-50">
+            <h3> Principiante</h3>
+            <p>¡Felicidades!Comienzas a entrenar después de mucho tiempo sin realizar actividad física intensa, .
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <img src="images/level2.png" alt="escalado" class="w-50">
+            <h3>Escalado </h3>
+            <p> Ya sabes como hacer casi todos los movimientos, pero aún necesitas mejorar tu técnica y ganar fuerza
+            </p>
+        </div>
+        <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <img src="images/level3.png" alt="RX" class="w-50">
+            <h3>RX</h3>
+            <p>Estás listo para llevar el Cross Training a un nivel conpetitivo. ¡Eres grande!</p>
+        </div>
+    </div>
+</div>
+<hr class="my-4">
+
+<h3 class=" text-center m-3 ">Para comenzar Selecciona tu nivel: </h3>
+
+<div class="chalkBoard d-flex justify-content-center">
     <form action="/createWod" method="POST">
         <div>
             <input type="radio" id="Principiante" name="level" value="Principiante" checked>
-            <label for="huey">Principiante</label>
+            <label for="Principiante">Principiante</label>
         </div>
         <div>
             <input type="radio" id="Escalado" name="level" value="Escalado">
-            <label for="dewey">Escalado</label>
+            <label for="dePrincipiantewey">Escalado</label>
         </div>
         <div>
             <input type="radio" id="RX" name="level" value="RX">
-            <label for="louie">RX</label>
+            <label for="RX">RX</label>
         </div>
-
         </datalist>
-        <input type="submit" value="Rock on!">
-    </form>
 
+        <input class="btn btn-info btn-lg" type="submit" value="Rock on!">
     </form>
-    
-    <h4><a href="/profile"><button>Volver a mi Perfil</button></a></h4>
-<br><h4><a href="/wods"><button>Ver todos los WOD's</button></a></h4><br>
+</div>
+<br>

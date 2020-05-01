@@ -71,7 +71,9 @@ a {
   .carousel-caption h3 {
     font-size: 100%;
     color: white;
-    text-shadow: 1px 1px 10px black; } }
+    text-shadow: 1px 1px 10px black; }
+  .chalkBoard {
+    height: 8em; } }
 
 @media (max-width: 576px) {
   .carousel-caption h1 {
@@ -82,7 +84,9 @@ a {
   .carousel-caption h3 {
     color: white;
     text-shadow: 1px 1px 10px black;
-    font-size: 75%; } }
+    font-size: 75%; }
+  .chalkBoard {
+    height: 13em; } }
 
 /*---Firefox Bug Fix --*/
 .carousel-item {
