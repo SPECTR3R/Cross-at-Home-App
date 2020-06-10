@@ -1,6 +1,4 @@
-# Ironhack-Project-Node-JS-App
-
-## App CrossAtHome
+# App CrossAtHome
 
 ![Timer](/crossAtHome/public/images/screen1.png)
 
@@ -31,7 +29,6 @@ Link para disfrutar de la app:
 `$ npm install`
 
 ### App creada con:
-
 - JavaScript
 - NodeJS
 - Express
